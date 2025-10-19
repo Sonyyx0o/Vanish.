@@ -1,41 +1,31 @@
--- ========================================================================
--- =)
--- ========================================================================
----@diagnostic disable: undefined-global, undefined-field
-
+-- Я видел фотки, как просто с 
+-- другом ты улетела (Ты улетела)
+-- Зачем тогда, всё это время, ты 
+-- мне пиздела? (Зачем пиздела?)
+-- Давай расскажем ему, как 
+-- мы ебались прошлой ночью
+-- И почему расстались
+-- Я не знал, что ты такая стерва
+-- Но я навсегда останусь 
+-- в твоей жизни первым
+-- Давай расскажем ему как 
+-- мы ебались прошлой ночью
+-- И почему расстались
+-- Я не знал, что ты такая стерва
+-- Но я навсегда останусь 
+-- в твоей жизни первым.
 if not LPH_OBFUSCATED then
     LPH_NO_VIRTUALIZE = function (...) return ... end
 end
 
 LPH_NO_VIRTUALIZE(function ()
--- credits to @uwukson4800
 _G.DEBUG = true
 local safe do safe = { } function safe:print(...) if _DEBUG then print('[dbg] ', ...) end end function safe:require(module_name) local status, module = pcall(require, module_name) if status then return module else self:print('error while loading module "' .. module_name .. '": ' .. module) return nil end end function safe:call(func, ...) local args = { ... } local status, err = pcall(func, unpack(args)) if not status then self:print('error with ' .. func .. ' : ' .. err) end end client.set_event_callback('shutdown', function() if safe then safe = nil end if _DEBUG then _DEBUG = false end end) end
-
--- мало что ли дарил цветов, или мало курили на хате?
--- мало ли что ли один диалог с тобой в моём телеграме?
--- ты видишь в округе десятки типов, сравнения жизни в квадрате
--- я вижу тебя лишь одну, сотни хотели бы также
--- я много прошёл, и я разное видел: классные попы, зачётные сиськи
--- модели журналов, кассиры на рынке, фигуры с обложки, да хуй бы и с ними
--- нужен твой нежный голос, нужна ебанутая ты
--- пойду поработаю в поле, я соберу тебе все цветы
-
--- мы ищем друг друга в чужих лицах, твой парфюм вводит меня в паничку
--- нас слишком много, вокруг связало, живём не в мире, а в рэд флаге
--- в гике по району скитаюсь, подруги затыкали пальцем
--- нахуй змеиные рты, мы сами с тобой всё знаем
--- (мы сами с тобой всё знаем)
-
--- они всегда будут против меня
--- твои родители кричат: «Он наркоман!»
--- я трезвее всех трезвых, мне просто похуй, малая
--- мне просто похуй, малая (просто похуй, малая)
 
 do
     client.exec('clear')
     client.exec('con_filter_enable 1')
-    client.exec('con_filter_text \'[gamesense] / Emberlash V2\'')
+    client.exec('con_filter_text \'[gamesense] / Nocthra\'')
 end
 
 local ffi           = safe:require ('ffi')
@@ -55,7 +45,7 @@ local color_struct_t = ffi.typeof("color_struct_t")
 
 local color_print = (function()local b=function(c,d)c=tostring(c)local e=ffi.cast(uintptr_t,client.create_interface("vstdlib.dll","VEngineCvar007"))local f=ffi.cast("print_function",e[0][25])f(e,color_struct_t(d.r,d.g,d.b,d.a),c)end;return b end)()
 local function log(b)color_print("Script\0",color_struct_t(136, 93, 252,255))color_print("leaks \0",color_struct_t(200,200,200,255))color_print('~ \0',color_struct_t(136, 93, 252,255))color_print(b,color_struct_t(200,200,200,255))color_print('\n',color_struct_t(200,200,200,0))end
-log("https://discord.gg/b37eKFbkPE")
+log("https://discord.gg/xcu5KfnVg5")
 
 local vector        = safe:require ('vector')
 
